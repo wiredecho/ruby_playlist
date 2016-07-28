@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 	def songs
 		@user = User.find(session[:user_id])
-		@songs = Song.all
+		@songs = Song.all.order! 'created_at DESC'
 	end
 
 	def create
