@@ -25,9 +25,9 @@
 		        <% @songs.each do |m| %>
 		            <tr><!-- Row 1 -->
 		                <td><%= m.artist.capitalize%></td>
-		                <td><a href="songs/<%= m.id %>"><%= m.title %></a></td>
+		                <td><a href="songs/<%= m.id %>"><%= m.title.capitalize %></a></td>
 		                <td><%= m.added %></td>
-		                <td><button>Add</button>
+		                <td><button>Add</button></td>
 		            </tr>
 		 
 		            <%end%>
@@ -40,17 +40,18 @@
 
 
 	<div id="song_entry" class="col-sm-4">
-			<h1>Add a song</h1>
-			<form action="/songs" method="POST">
-			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-				<div class="form-group">
-					<label for="artist_name">Artist: </label>
-					<input type="text" class="form-control" id="artist" name="artist">
-				</div>
-				<div class="form-group">
-					<label for="title">Title: </label><br/>
-					<input type="text" class="form-control" id="title" name="title">
-				</div>
-				<button type="submit" class="btn btn-info">Add Song</button>
-			</form>
-		</div>
+		<h1>Add a song</h1>
+		<form action="/songs" method="POST">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="form-group">
+				<label for="artist_name">Artist: </label>
+				<input type="text" class="form-control" id="artist" name="song[artist]">
+			</div>
+			<div class="form-group">
+				<label for="title">Title: </label><br/>
+				<input type="text" class="form-control" id="title" name="song[title]">
+			</div>
+			<button type="submit" class="btn btn-info">Add Song</button>
+		</form>
+	</div>
+	</div>
