@@ -25,7 +25,7 @@
 		        <% @songs.each do |m| %>
 		            <tr><!-- Row 1 -->
 		                <td><%= m.artist.capitalize%></td>
-		                <td><%= m.title %> - <%= m.losses %></td>
+		                <td><a href="songs/<%= m.id %>"><%= m.title %></a></td>
 		                <td><%= m.added %></td>
 		                <td><button>Add</button>
 		            </tr>
