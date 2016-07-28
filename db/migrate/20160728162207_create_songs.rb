@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.integer :added
-      t.references :user, index: true, foreign_key: true
+      t.references :songlist, index: true, foreign_key: true
 
       t.timestamps null: false
     end

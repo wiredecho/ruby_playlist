@@ -3,11 +3,11 @@
 one:
   title: MyString
   artist: MyString
-  added: 1
-  songlist_id: 
+  count: 1
+  plist_id: 
 
 two:
   title: MyString
   artist: MyString
-  added: 1
-  songlist_id: 
+  count: 1
+  plist_id: 

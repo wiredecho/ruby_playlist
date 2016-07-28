@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post "users" =>"users#create"
   post "sessions" => "sessions#create"
   get "songs" => "sessions#songs"
+  post "songs" => "songs#create"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

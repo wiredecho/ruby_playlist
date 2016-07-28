@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 	def songs
+		@user = User.find(session[:user_id])
+		@songs = Song.all
 	end
 
 	def create

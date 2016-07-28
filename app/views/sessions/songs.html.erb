@@ -1,2 +1,56 @@
-<h1>Sessions#songs</h1>
-<p>Find me in app/views/sessions/songs.html.erb</p>
+
+
+<div class="container">
+
+	<div class="row">
+		<h1>Hello, <%= @user.first_name.capitalize %>!</h1>
+		<p>All the songs in our hub:</p>
+	</div>	
+
+
+
+	<div>
+		<table class="table table-bordered"> <!-- bordered table class -->
+		        <thead><!-- table head-->
+		            <tr>
+		               	<th>Artist</th>
+		                <th>Title</th>
+		                <th>No. of Times Song Has Been Added</th>
+		              	<th>Add to Playlist</th>
+		            </tr>
+		        </thead>
+				
+		        <tbody>
+		        
+		        <% @songs.each do |m| %>
+		            <tr><!-- Row 1 -->
+		                <td><%= m.artist.capitalize%></td>
+		                <td><%= m.title %> - <%= m.losses %></td>
+		                <td><%= m.added %></td>
+		                <td><button>Add</button>
+		            </tr>
+		 
+		            <%end%>
+		           
+			   </tbody>
+		</table>
+	</div>
+
+
+
+
+	<div id="song_entry" class="col-sm-4">
+			<h1>Add a song</h1>
+			<form action="/songs" method="POST">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<div class="form-group">
+					<label for="artist_name">Artist: </label>
+					<input type="text" class="form-control" id="artist" name="artist">
+				</div>
+				<div class="form-group">
+					<label for="title">Title: </label><br/>
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+				<button type="submit" class="btn btn-info">Add Song</button>
+			</form>
+		</div>
